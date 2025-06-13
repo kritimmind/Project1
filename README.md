@@ -49,7 +49,7 @@ git_repository:
   host: GitHub or GitLab
   workflow:
     - Clone repository:
-        command: git clone https://github.com/your-org/responsive-ui-components-project.git
+        command: git clone [https://github.com/your-org/responsive-ui-components-project.git](https://github.com/kritimmind/Project1.git)
     - Create group-specific branch:
         command: git checkout -b group-a-card-grid
     - Stage and commit:

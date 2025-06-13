@@ -1,15 +1,15 @@
 project:
-  name: Responsive UI Component Design Project
-  tech_stack:
+  - name: Responsive UI Component Design Project
+  - tech_stack:
     - HTML5
     - CSS3 or Tailwind CSS
-  description: >
+  - description: >
     A collaborative frontend development project where 4 groups of students design and implement
     5 real-world UI components using HTML and CSS. The focus is on responsive design, clean structure,
     reusable components, and optionally using Tailwind CSS for utility-first styling.
 
-structure:
-  folders:
+- structure:
+  - folders:
     - Group-A/responsive-card-grid/
     - Group-B/sticky-navbar-dropdown/
     - Group-C/contact-form/
@@ -17,12 +17,12 @@ structure:
     - Group-D/product-card-hover/
     - shared-assets/ # optional
     - README.md
-  files:
-    each_component:
+  - files:
+    - each_component:
       - index.html
       - style.css or tailwind.css
 
-components:
+- components:
   - name: Responsive Card Grid
     group: Group A
     members: [Pooja, Pratistha, Pemba]

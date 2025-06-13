@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card with Hover Animation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(59, 130, 246, 0); }
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+        
+        .star-filled {
+            background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .star-empty {
+            color: #d1d5db;
+        }
+        
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+        
+        .add-to-cart-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .add-to-cart-btn:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            transform: translateY(-2px);
+        }
+        
+        .price-highlight {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .badge {
+            background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+        }
+        
+        .product-image-container {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-image {
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.1) rotate(2deg);
+        }
+        
+        .extra-details {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s ease;
+        }
+        
+        .product-card:hover .extra-details {
+            opacity: 2;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-screen flex items-center justify-center p-8">
+    <div class="max-w-sm mx-auto">
+        <!-- Product Card -->
+        <div class="product-card bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-gray-100 overflow-hidden group">
+            <div class="product-image-container relative">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/047/977/789/small_2x/modern-wireless-headphones-on-green-screen-background-free-video.jpg" 
+                     alt="Premium Wireless Headphones" 
+                     class="product-image w-full h-64 object-cover">
+                <div class="badge absolute top-4 left-4 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                    BESTSELLER
+                </div>
+                
+            </div>
+            
+            <div class="p-6">
+                <div class="mb-3">
+                    <h3 class="font-bold text-xl text-gray-800 mb-2 group-hover:text-indigo-600 transition-colors">
+                        Premium Wireless Headphones
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 font-bold">
+                        High-quality sound with active noise cancellation
+                    </p>
+                    
+                    <!-- Rating Stars -->
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="flex items-center">
+                            <span class="star-filled text-xl">★★★★</span>
+                            <span class="star-empty text-xl">★</span>
+                        </div>
+                        <span class="text-gray-500 text-sm">(4.2)</span>
+                        <span class="text-gray-400 text-sm">• 127 reviews</span>
+                    </div>
+                </div>
+                
+                <!-- Price -->
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="price-highlight text-2xl font-bold">Rs-199.99</span>
+                        
+                    </div>
+                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">
+                        20% OFF
+                    </span>
+                </div>
+                
+                <!-- Extra Details -->
+                <div class="extra-details mb-4">
+                    <div class="flex justify-between text-sm text-gray-600 mb-2">
+                        <span class="font-bold text-xl">Free shipping</span>
+                        <span class="text-blue-600 font-bold">In stock</span>
+                    </div>
+                    <div class="flex gap-2 mb-3">
+                        <span class="bg-gray-300 px-2 py-1 rounded text-xs font-semibold">Bluetooth 5.0</span>
+                        <span class="bg-gray-300 px-2 py-1 rounded text-xs font-semibold">30h Battery</span>
+                        <span class="bg-gray-300 px-2 py-1 rounded text-xs font-semibold">Noise Cancel</span>
+                    </div>
+                </div>
+                
+                <!-- Add to Cart Button -->
+                <button class="add-to-cart-btn w-full text-red py-3 px-6 rounded-xl font-semibold shadow-lg pulse-glow hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 text-white">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6H19"></path>
+                    </svg>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
